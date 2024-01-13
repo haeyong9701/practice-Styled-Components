@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import facebook from "./facebook.svg";
 
 const SIZES = {
   large: 24,
@@ -35,16 +34,4 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ children }) => {
-  return (
-    <>
-      <StyledButton font="large">
-        <Icon src={facebook} alt="facebook icon" />
-        {children}
-      </StyledButton>
-      <Icon src={facebook} alt="facebook icon" />
-    </>
-  );
-};
-
-export default Button;
+export default StyledButton;
