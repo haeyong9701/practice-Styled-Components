@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import facebook from "./facebook.svg";
 
+const SIZES = {
+  large: 24,
+  medium: 20,
+  small: 16,
+};
+
 const Icon = styled.img`
   width: 16px;
   height: 16px;
@@ -12,6 +18,7 @@ const StyledButton = styled.button`
   border: none;
   color: #ffffff;
   padding: 16px;
+  font-size: ${({ font }) => SIZES[font] ?? SIZES["medium"]}px;
 
   ${Icon} {
     margin-right: 4px;
@@ -31,7 +38,7 @@ const StyledButton = styled.button`
 const Button = ({ children }) => {
   return (
     <>
-      <StyledButton>
+      <StyledButton font="large">
         <Icon src={facebook} alt="facebook icon" />
         {children}
       </StyledButton>
