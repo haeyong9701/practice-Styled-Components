@@ -1,6 +1,16 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Button from "./Button";
 import TermsOfService from "./TermsOfService";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+`;
 
 const StyledTermsOfService = styled(TermsOfService)`
   background-color: #ededed;
@@ -24,6 +34,7 @@ const SubmitButton = styled(Button)`
 function App() {
   return (
     <div>
+      <GlobalStyle />
       <StyledTermsOfService />
       <SubmitButton>계속하기</SubmitButton>
     </div>
