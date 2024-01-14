@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Button from "./Button";
 import TermsOfService from "./TermsOfService";
 import Placeholder, { PlaceholderItem } from "./Placeholder";
@@ -22,7 +22,7 @@ const StyledTermsOfService = styled(TermsOfService)`
 `;
 
 const SubmitButton = styled(Button)`
-  background-color: #de117d;
+  background-color: ${({ theme }) => theme.primaryColor};
   display: block;
   margin: 0 auto;
   width: 200px;
@@ -46,12 +46,20 @@ const C = styled(PlaceholderItem)`
   width: 200px;
 `;
 
+const theme = {
+  primaryColor: "#1da1f2",
+};
+
 function App() {
   return (
     <div>
       <GlobalStyle />
       <StyledTermsOfService />
-      <SubmitButton>계속하기</SubmitButton>
+
+      <ThemeProvider theme={theme}>
+        <SubmitButton>계속하기</SubmitButton>
+      </ThemeProvider>
+
       <Placeholder>
         <A />
         <B />

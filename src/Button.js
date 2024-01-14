@@ -16,7 +16,7 @@ const Icon = styled.img`
   background-color: blue;
 `;
 
-const StyledButton = styled.button`
+const Button = styled.button`
   background-color: #6750a4;
   border: none;
   color: #ffffff;
@@ -38,4 +38,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export default StyledButton;
+export default Button;
