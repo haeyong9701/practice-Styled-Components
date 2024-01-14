@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Button from "./Button";
 import TermsOfService from "./TermsOfService";
+import Placeholder, { PlaceholderItem } from "./Placeholder";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -31,12 +32,31 @@ const SubmitButton = styled(Button)`
   }
 `;
 
+const A = styled(PlaceholderItem)`
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+`;
+
+const B = styled(PlaceholderItem)`
+  width: 400px;
+`;
+
+const C = styled(PlaceholderItem)`
+  width: 200px;
+`;
+
 function App() {
   return (
     <div>
       <GlobalStyle />
       <StyledTermsOfService />
       <SubmitButton>계속하기</SubmitButton>
+      <Placeholder>
+        <A />
+        <B />
+        <C />
+      </Placeholder>
     </div>
   );
 }
